@@ -7,7 +7,6 @@ function mergeArrays(arr1, arr2) {
     while(x < arr1.length && y < arr2.length){
         
         if(arr1[x] < arr2[y]){
-            
             result.push(arr1[x]);
             x++;
         } else {
@@ -31,6 +30,18 @@ function mergeArrays(arr1, arr2) {
 }
 
 
+function mergeSort(arr){
+
+    if (arr.length <= 1) return arr;
+
+    var mid = Math.floor(arr.length/2);
+    var left = [arr[0], arr[mid]];
+    var right = [arr[mid+1], arr[arr.length-1]];
+
+    console.log("left", left);
+    console.log("right", right);
+
+}
 
 
-mergeArrays([1,5,8], [2,3,4,7])
+mergeSort([1,5,8,2,3,4,7])
