@@ -41,4 +41,7 @@ function mergeSort(arr){
 }
 
 
-mergeSort([1,5,8,2,3,4,7])
+//mergeSort([1,5,8,2,3,4,7]) => [1,2,3,4,5,7,8]
+
+//time complexity => O(nlogn)
+//space complexity => O(n)
