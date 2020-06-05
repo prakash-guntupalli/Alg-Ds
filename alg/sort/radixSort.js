@@ -29,3 +29,27 @@ function maxDigits(arr){
     return maxVal;
 }
 //maxDigits([21, 123, 3, 75, 6729, 87]) => 4
+
+
+
+function radixSort(arr){
+    let maxDigitCount = maxDigits(arr);
+
+    for(let i=0; i < maxDigitCount; i++){
+        //create buckets from 0-9 inorder to allocate array elements
+        let digitBuckets = Array.from({length:10}, () => []);
+
+        for(let j=0; j < arr.length; j++){
+
+            let digit = getDigit(arr[j], i);
+            digitBuckets[digit].push(arr[j]);
+        }
+        
+        arr = [].concat(...digitBuckets);
+    }
+
+    return arr;
+}
+
+
+radixSort([23, 345, 5467, 12, 2345, 9852]);
