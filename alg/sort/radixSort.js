@@ -1,3 +1,5 @@
+//large part of efficiency depends on the data we pass to the radix sort
+
 //helper function 1
 //function to get specific digit on given index
 function getDigit(num, i){
@@ -40,7 +42,7 @@ function radixSort(arr){
         let digitBuckets = Array.from({length:10}, () => []);
 
         for(let j=0; j < arr.length; j++){
-
+            //assign array elments to buckets based on the digits loop (i)
             let digit = getDigit(arr[j], i);
             digitBuckets[digit].push(arr[j]);
         }
@@ -52,4 +54,4 @@ function radixSort(arr){
 }
 
 
-radixSort([23, 345, 5467, 12, 2345, 9852]);
+//radixSort([23, 345, 5467, 12, 2345, 9852]); => [12, 23, 345, 2345, 5467, 9852]
