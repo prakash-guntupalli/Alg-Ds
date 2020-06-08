@@ -63,3 +63,5 @@ function radixSort(arr){
 
 // time complexity =>  O(nw) 
 // where n = length of array, w = no of digits (in some cases w = logn) which results O(nlogn)
+
+//space complexity => O(n + w)
