@@ -39,3 +39,6 @@ function quickSort(arr, left = 0, right = arr.length - 1){
 }
 
 //quickSort([4,8,2,1,5,7,6,3])  => [1.2.3.4.5.6.7]
+
+//time complexity => O(nlogn)
+//space complexity => O(logn)
