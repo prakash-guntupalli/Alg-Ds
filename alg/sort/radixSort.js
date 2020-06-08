@@ -37,13 +37,13 @@ function maxDigits(arr){
 function radixSort(arr){
     let maxDigitCount = maxDigits(arr);
 
-    for(let i=0; i < maxDigitCount; i++){
+    for(let w=0; w < maxDigitCount; w++){
         //create buckets from 0-9 inorder to allocate array elements
         let digitBuckets = Array.from({length:10}, () => []);
 
         for(let j=0; j < arr.length; j++){
             //assign array elments to buckets based on the digits loop (i)
-            let digit = getDigit(arr[j], i);
+            let digit = getDigit(arr[j], w);
             digitBuckets[digit].push(arr[j]);
         }
         
@@ -55,3 +55,11 @@ function radixSort(arr){
 
 
 //radixSort([23, 345, 5467, 12, 2345, 9852]); => [12, 23, 345, 2345, 5467, 9852]
+//after 1st step [12, 9852, 23, 345, 2345, 5467]
+//after 2nd step [12, 23, 345, 2345, 9852, 5467]
+//after 3rd step [12, 23, 345, 2345, 5467, 9852]
+//after 4th step [12, 23, 345, 2345, 5467, 9852]
+
+
+// time complexity =>  O(nw) 
+// where n = length of array, w = no of digits (in some cases w = logn) which results O(nlogn)
