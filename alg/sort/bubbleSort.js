@@ -20,6 +20,7 @@ function bubbleSort(arr){
 //bubbleSort([2, 8, 5, 12, 9, -3]);  =>  [-3,2,5,8,9,12]
 
 //time complexity => O(n^2);
+//space complexity => O(1)
 
 // can be optimized by introducing a variable in cases when data is almost sorted & swap is not needed we can break the loop
 
