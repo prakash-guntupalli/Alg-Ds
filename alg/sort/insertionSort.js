@@ -28,3 +28,7 @@ function insertionSort(arr){
 // 4th step = [2,3,4,5,7,8,1]
 // 5th step = [2,3,4,5,7,8,1]
 // 6th step = [1,2,3,4,5,7,8]
+
+
+//time complexity : O(n^2)
+//space complexity: O(1)

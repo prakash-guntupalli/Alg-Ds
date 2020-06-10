@@ -23,4 +23,8 @@ function selectionSort(arr){
 }
 
 
-//selectionSort([ 0, 2, 12, 8, 6, 16, 24]) => [0,2,6,8,12,16,24]
+//selectionSort([ 1, 2, 12, 8, 6, 16, 24]) => [1,2,6,8,12,16,24]
+
+
+//time complexity : O(n^2)
+//space complexity: O(1)
