@@ -17,6 +17,7 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
+    //add an element at the end
     push(val) {
         let latest = new Node(val);
         
@@ -31,6 +32,7 @@ class SinglyLinkedList {
         return this;
     }
 
+    //remove an element at the end
     pop() {
         if(!this.head) return undefined;
         else {
@@ -53,6 +55,22 @@ class SinglyLinkedList {
         }
 
     }
+
+    //remove an element at the start
+    shift() {
+        if(!this.head) return undefined;
+        else {
+            if(this.length > 0){
+                let newHead = this.head;
+                this.head = newHead.next;
+
+                this.length--;
+                return newHead;
+
+            }
+        }
+        this.length--;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -61,5 +79,8 @@ let list = new SinglyLinkedList();
 //list.push("there");   => length:2 , Hi->There
 
 
-//list.pop();           => "there" (popped element)
+//list.pop();           => length: 1, "there" (popped element)
 //list;                 => "Hi"
+
+//list                  => 5,6,7
+//list.shift()          => length:2, (5)
