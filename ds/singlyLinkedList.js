@@ -74,6 +74,22 @@ class SinglyLinkedList {
         }
         this.length--;
     }
+
+
+    //add an element at the start
+    unshift(val) {
+        let newHead = new Node(val);
+
+        if(!this.head) {
+            this.head = newHead;
+            this.tail = this.head;
+        } else {
+            newHead.next = this.head;
+            this.head = newHead;
+        }
+        this.length++;
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -87,3 +103,7 @@ let list = new SinglyLinkedList();
 
 //list                  => 5,6,7
 //list.shift()          => length:2, (5)
+
+
+//list.unshift("hi")    => "hi" - length:1
+//list.unshift("hello") => "hello","hi" - length:2
