@@ -90,6 +90,25 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+
+    //return the element at given index
+    get(index){
+        let current = this.head;
+        let counter = 0;
+
+        if((index >0 && index < this.length) && this.length > 0){
+
+            while(counter !== index){
+                current = current.next;
+                counter++;
+            }
+            return current;
+
+        } else {
+            return null;
+        }
+    }
+
 }
 
 let list = new SinglyLinkedList();
@@ -107,3 +126,7 @@ let list = new SinglyLinkedList();
 
 //list.unshift("hi")    => "hi" - length:1
 //list.unshift("hello") => "hello","hi" - length:2
+
+
+//list              => 1,2,3,4,5
+//list.get(3)       => 4
