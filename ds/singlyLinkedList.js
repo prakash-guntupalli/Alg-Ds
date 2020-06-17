@@ -91,7 +91,7 @@ class SinglyLinkedList {
         return this;
     }
 
-    //return the element at given index
+    //return the element value at given index
     get(index){
         let current = this.head;
         let counter = 0;
@@ -107,6 +107,16 @@ class SinglyLinkedList {
         } else {
             return null;
         }
+    }
+
+    //change the node value at given place
+    set(index, val){
+        let getNode = this.get(index);
+        if(getNode){
+            getNode.val = val;
+            return true;
+        }
+        return false;
     }
 
 }
@@ -130,3 +140,8 @@ let list = new SinglyLinkedList();
 
 //list              => 1,2,3,4,5
 //list.get(3)       => 4
+
+
+//list              => 1,2,3,4,5
+//list.set(3, 55)   => true
+//list              => 1,2,3,55,5
