@@ -119,6 +119,22 @@ class SinglyLinkedList {
         return false;
     }
 
+    //create a node with given value and insert it at given index
+    insert(index, val){
+        if(index < 0 || index > this.length) return false;
+        if(index === 0) return !!this.unshift(val);
+        if(index === this.length) return !!this.push(val);
+
+        let newNode = new Node(val);
+        let getNode = this.get(index-1);
+        let temp = getNode.next;
+        getNode.next = newNode;
+        newNode.next = temp;
+        this.length++;
+
+        return true;
+    }
+
 }
 
 let list = new SinglyLinkedList();
@@ -145,3 +161,7 @@ let list = new SinglyLinkedList();
 //list              => 1,2,3,4,5
 //list.set(3, 55)   => true
 //list              => 1,2,3,55,5
+
+
+//list              => 1,2,3,4,5
+//list.insert(2,33) => 1,2,33,4,5
