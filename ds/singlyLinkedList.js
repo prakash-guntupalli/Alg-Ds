@@ -135,6 +135,19 @@ class SinglyLinkedList {
         return true;
     }
 
+    //remove a node at given value
+    remove(index){
+        if(index < 0 || index > this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index === this.length-1) return this.pop();
+
+        let getNode = this.get(index -1);
+        let removed = getNode.next;
+        getNode.next = removed.next;
+        this.length--;
+
+        return removed;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -165,3 +178,8 @@ let list = new SinglyLinkedList();
 
 //list              => 1,2,3,4,5
 //list.insert(2,33) => 1,2,33,4,5
+
+
+//list              => 1,2,3,4,5
+//list.remove(2)    => 3
+//list.remove(6)    => undefined
