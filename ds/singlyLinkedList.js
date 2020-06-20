@@ -148,6 +148,25 @@ class SinglyLinkedList {
 
         return removed;
     }
+
+    // reverse the list
+    reverse(){
+        let current = this.head;
+        this.head = this.tail;
+        this.tail = current;
+
+        let next;
+        let prev = null;
+
+        for(let i=0; i< this.length; i++){
+            next = current.next;
+            current.next = prev;
+
+            prev = current;
+            current = next;
+        }
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -183,3 +202,7 @@ let list = new SinglyLinkedList();
 //list              => 1,2,3,4,5
 //list.remove(2)    => 3
 //list.remove(6)    => undefined
+
+
+//list              => 1,2,3,4,5
+//list.reverse()    => 5,4,3,2,1
