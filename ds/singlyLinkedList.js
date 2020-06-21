@@ -17,7 +17,8 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
-    //add an element at the end
+    //add an element at the end 
+    //=> O(n)
     push(val) {
         let latest = new Node(val);
         
@@ -32,7 +33,8 @@ class SinglyLinkedList {
         return this;
     }
 
-    //remove an element at the end
+    //remove an element at the end 
+    //=> O(n)
     pop() {
         if(!this.head) return undefined;
         else {
@@ -56,7 +58,8 @@ class SinglyLinkedList {
 
     }
 
-    //remove an element at the start
+    //remove an element at the start 
+    //=> O(1)
     shift() {
         if(!this.head) return undefined;
         else {
@@ -76,7 +79,8 @@ class SinglyLinkedList {
     }
 
 
-    //add an element at the start
+    //add an element at the start 
+    //=> O(1)
     unshift(val) {
         let newHead = new Node(val);
 
@@ -91,7 +95,8 @@ class SinglyLinkedList {
         return this;
     }
 
-    //return the element value at given index
+    //return the element value at given index 
+    //=> O(n)
     get(index){
         let current = this.head;
         let counter = 0;
@@ -109,7 +114,8 @@ class SinglyLinkedList {
         }
     }
 
-    //change the node value at given place
+    //change the node value at given place 
+    //=> O(n)
     set(index, val){
         let getNode = this.get(index);
         if(getNode){
@@ -119,7 +125,8 @@ class SinglyLinkedList {
         return false;
     }
 
-    //create a node with given value and insert it at given index
+    //create a node with given value and insert it at given index   
+    //=> O(1) || O(n)
     insert(index, val){
         if(index < 0 || index > this.length) return false;
         if(index === 0) return !!this.unshift(val);
@@ -135,7 +142,8 @@ class SinglyLinkedList {
         return true;
     }
 
-    //remove a node at given value
+    //remove a node at given value      
+    //=> O(1) || O(n)
     remove(index){
         if(index < 0 || index > this.length) return undefined;
         if(index === 0) return this.shift();
@@ -149,7 +157,8 @@ class SinglyLinkedList {
         return removed;
     }
 
-    // reverse the list
+    // reverse the list 
+    //=> O(n)
     reverse(){
         let current = this.head;
         this.head = this.tail;
