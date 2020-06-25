@@ -49,13 +49,16 @@ class DoublyLinkedList {
     }
 
     shift(){
-        if(!this.head) return undefined;
-        var newHead = this.head.next;
-        var oldHead = this.head;
-        newHead.prev = null;
-        oldHead.next = null;
-        this.head = newHead;
-
+        if(this.length === 0) return undefined;
+        let oldHead = this.head;
+        if(this.length ===1){
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null;
+        }
         this.length--;
         return oldHead;
     }
