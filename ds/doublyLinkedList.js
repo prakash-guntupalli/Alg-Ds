@@ -26,6 +26,7 @@ class DoublyLinkedList {
         } else {
             this.tail.next = latest;
             latest.prev = this.tail;
+            this.tail = latest;
         }
 
         this.length++;
@@ -60,6 +61,21 @@ class DoublyLinkedList {
         }
         this.length--;
         return oldHead;
+    }
+
+    unshift(val){
+        let newNode = new Node(val);
+
+        if(!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
     }
 }
 
