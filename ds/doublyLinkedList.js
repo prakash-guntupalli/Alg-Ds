@@ -98,6 +98,15 @@ class DoublyLinkedList {
         }
         return current;
     }
+
+    set(index, val){
+        let givenNode = this.get(index);
+        if(givenNode){
+            givenNode.val = val;
+            return true;
+        }
+        return false;
+    }
 }
 
 let list = new DoublyLinkedList();
