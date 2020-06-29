@@ -109,7 +109,7 @@ class DoublyLinkedList {
     }
 
     insert(index, val){
-        if(index < 0 || index > this.length) return false;
+        if(index < 0 || index >= this.length) return false;
         if(index === 0) return !!this.unshift(val);
         if(index === this.length-1) return !!this.push(val);
 
@@ -125,10 +125,22 @@ class DoublyLinkedList {
         this.length++;
         return true;
     }
+
+    remove(index){
+        if(index < 0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index === this.length -1) return this.pop();
+
+        let prevNode = this.get(index-1);
+        let delNode = prevNode.next;
+        let afterNode = delNode.next;
+        prevNode.next = afterNode.prev;
+        delNode.prev = null;
+        delNode.next = null;
+
+        this.length--;
+        return delNode;
+    }
 }
 
 let list = new DoublyLinkedList();
-
-2,3,4,5,6,7
-
-2, 50
