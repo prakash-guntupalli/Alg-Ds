@@ -144,3 +144,12 @@ class DoublyLinkedList {
 }
 
 let list = new DoublyLinkedList();
+
+
+// Insert - O(1)
+// Remove - O(1)
+// Search - O(n/2) ~ O(n)
+// Access - O(n)
+
+// search is efficient than single linked list
+// but it takes more memory
