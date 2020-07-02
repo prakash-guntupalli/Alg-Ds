@@ -11,7 +11,8 @@
         
 // Stack push & pop has constant time (unlike singly linked list push & pop where new node is added & removed at the end)
 
-//Stack implementation with array
+// Stack implementation with array
+// Push() with Pop() or unshift() with Shift()
 
 // Stack implementation from scratch - linked list
 
@@ -67,5 +68,7 @@ let stack = new Stack();
 // stack.pop()          = THIRD
 // stack.pop()          = SECOND
 
-// Push => O(n)
-// Pop  => O(n)
+// Insertion/Push => O(1)
+// Removal/Pop  => O(1)
+// Search       => O(n)
+// Access       => O(n)
