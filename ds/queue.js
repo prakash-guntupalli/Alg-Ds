@@ -16,10 +16,10 @@ class Queue {
     constructor() {
         this.first = null;
         this.last = null;
-        this.size;
+        this.size = 0;
     }
 
-    enqueue(val) {
+    enqueue(val){
         let newNode = new Node(val);
         if(!this.first){
             this.first = newNode;
@@ -30,4 +30,20 @@ class Queue {
         }
         return ++this.size;
     }
+
+    dequeue(){
+        if(!this.first) return undefined;
+        let temp = this.first;
+        if(this.first === this.last){
+            this.last = null;
+            this.val = null;
+        }
+        this.first = this.first.next;
+        temp.next = null;
+
+        this.size--;
+        return temp.val;
+    }
 }
+
+let list = new Queue();
