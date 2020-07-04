@@ -47,3 +47,8 @@ class Queue {
 }
 
 let list = new Queue();
+
+// insertion    => O(1)
+// deletion     => O(1)
+// searching    => O(n)
+// access       => O(n)
