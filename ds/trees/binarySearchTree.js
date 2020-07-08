@@ -58,3 +58,6 @@ class BinarySearchTree {
 }
 
 let tree = new BinarySearchTree();
+
+//Insertion =>  O(logn);
+//Search    =>  O(logn);
