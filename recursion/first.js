@@ -22,3 +22,14 @@ function countDown(num){
 
 
 countDown(3);   //3,2,1  END
+
+
+
+function sumRange(num){
+    if(num === 1) return 1;
+    return num + sumRange(num-1);
+}
+
+sumRange(3); //6 => 3 + sumRange(2)
+                 // 3 + 2 + sumRange(1)
+                 // 3 + 2 + 1
