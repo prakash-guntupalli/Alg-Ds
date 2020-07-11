@@ -1,5 +1,6 @@
 // Call same function multiple times with different input
 // two essential parts of a recusrsive function - Base case, Different input
+// base case condition & returning values are common mistakes
 
 
 function countDown(num){
