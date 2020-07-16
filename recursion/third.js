@@ -29,3 +29,15 @@ function palindrome(str){
 }
 
 palindrome("abcdqdcba");    //true
+
+
+// function should accept array & callback as inputs, the function returns true if a single value in the array returns true when passed to callback.
+function someRecursive(array, callback) {
+    if (array.length === 0) return false;
+    if (callback(array[0])) return true;
+    return someRecursive(array.slice(1),callback);
+}
+
+
+//const isOdd = val => val % 2 !== 0;
+//someRecursive([1,2,3,4], isOdd)   => true
