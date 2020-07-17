@@ -41,3 +41,21 @@ function someRecursive(array, callback) {
 
 //const isOdd = val => val % 2 !== 0;
 //someRecursive([1,2,3,4], isOdd)   => true
+
+
+
+// flatten an array of arrays and return flattened array
+
+function flatten(oldArr){
+    var newArr = [];
+    for(var i = 0; i < oldArr.length; i++){
+        if(Array.isArray(oldArr[i])){
+            newArr = newArr.concat(flatten(oldArr[i]))
+        } else {
+            newArr.push(oldArr[i])
+        }
+    } 
+    return newArr;
+  }
+  
+flatten([1,2,[41,[4,5,[6,7],8],11],9,10]);      //[1, 2, 41, 4, 5, 6, 7, 8, 11, 9, 10]
