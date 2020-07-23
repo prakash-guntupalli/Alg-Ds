@@ -55,6 +55,29 @@ class BinarySearchTree {
         return false;
     }
 
+// Breadth First Search
+
+//           10
+//      6          15
+//    3   8     12     17
+
+// [10,6,15,3,8,12,17]
+
+    BFS(){
+        var node = this.root,
+        data = [],
+        queue = [];
+
+        queue.push(node);
+
+        while(queue.length){
+            node = queue.shift();
+            data.push(node.value);
+            if(node.length) queue.push(node.left);
+            if(node.right)  queue.push(node.right);
+        }
+        return data;
+    }
 }
 
 let tree = new BinarySearchTree();
