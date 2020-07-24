@@ -73,9 +73,22 @@ class BinarySearchTree {
         while(queue.length){
             node = queue.shift();
             data.push(node.value);
-            if(node.length) queue.push(node.left);
+            if(node.left) queue.push(node.left);
             if(node.right)  queue.push(node.right);
         }
+        return data;
+    }
+
+    // [10,6,3,8,15,12,17]
+    
+    DFSPreOrder(){
+        var data = [];
+        function traverse(node){
+            data.push(node.value);
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+        }
+        traverse(this.root);
         return data;
     }
 }
