@@ -136,3 +136,16 @@ tree.insert(17);
 tree.DFSPreOrder();     // [10,6,3,8,15,12,17]
 tree.DFSPostOrder();    // [3,8,6,12,17,15,10]
 tree.DFSInOrder();      // [3,6,8,10,12,15,17]
+
+
+// => Time complexity of BFS & DFS are same every node is visited once
+// => Space complexity varies, if child nodes are more BFS take more space than DFS
+
+// DFS In-order gives sorted values from small to large value
+// DFS Pre-order gives skeleton structure, easy to copy or flatten and reconstruct a tree.
+
+// Trees are non-linear ds that contain a root and child nodes.
+// Binary trees can have values of any type but atmost 2 children for each parent
+// Binary search trees are a more specific version of Binary trees where every node to the left of its parent is less and every node to the right is greater
+// we can search through trees using BFS or DFS
+
