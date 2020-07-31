@@ -20,12 +20,13 @@ class MaxBinaryHeap {
         this.bubbleUp();
     }
     bubbleUp(){
-        let idx = this.values.length -1;
+        let idx = this.values.length -1;    // newly added element index
         const element = this.values[idx];
         while(idx > 0){
-            let parentIdx = Math.floor((idx -1)/2);
+            let parentIdx = Math.floor((idx -1)/2); //get parent index from child idx
             let parent = this.values[parentIdx];
-            if(element <= parent) break;
+
+            if(element <= parent) break;            // if added element is smaller than parent break, else swap
             this.values[parentIdx] = element;
             this.values[idx] = parent;
             idx = parentIdx;
@@ -44,12 +45,12 @@ class MaxBinaryHeap {
         return max;
     }
     bubbleDown(){
-        let idx = 0;
+        let idx = 0;                        // removed element index - root
         const length = this.values.length;
         const element = this.values[0];
         while(true){
-            let rightChildIdx = 2*idx +2 ;
-            let leftChildIdx = 2*idx +1;
+            let rightChildIdx = 2*idx +2 ;  //get right child from parent idx
+            let leftChildIdx = 2*idx +1;    //get left child from parent idx
             let rightChild, leftChild;
             let swap = null;
 
@@ -61,9 +62,9 @@ class MaxBinaryHeap {
             }
             if(rightChildIdx < length){
                 rightChild = this.values[rightChildIdx];
-                if(
+                if(                             
                     (swap === null && rightChild > element) ||
-                    (swap !== null && rightChild > leftChild)
+                    (swap !== null && rightChild > leftChild)       // find large element btw left & right childs and swap with large one
                 ){
                     swap = rightChildIdx;
                 }
@@ -79,3 +80,5 @@ class MaxBinaryHeap {
 
 let heap = new MaxBinaryHeap();
 heap.insert(55);    //[55, 39, 41, 18, 27, 12, 33]
+heap.remove();  //55, heap -> [41, 39, 33, 18, 27, 12]
+heap.remove();  //41, heap -> [39, 27, 33, 18, 12]
