@@ -1,3 +1,5 @@
+import { removeAllListeners } from "cluster";
+
 // Binary Heap is similar to binary search tree, each parent can have 2 children and left children are filled first
 // Binary heaps are used to implement priority Queues and in graph traversal algorithms.
 
@@ -82,3 +84,8 @@ let heap = new MaxBinaryHeap();
 heap.insert(55);    //[55, 39, 41, 18, 27, 12, 33]
 heap.remove();  //55, heap -> [41, 39, 33, 18, 27, 12]
 heap.remove();  //41, heap -> [39, 27, 33, 18, 12]
+
+
+Insertion - O(log n)
+Removal   - O(log n)
+Search    - O(n)
