@@ -74,3 +74,6 @@ ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
   
+Insertion =>  O(1);
+Deletion  =>  O(1);
+Access    =>  O(1);
