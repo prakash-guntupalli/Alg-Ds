@@ -35,6 +35,18 @@ class Graph {
             v !== vertex1
         );
     }
+    // remove a vertex
+    removeVertex(vertex){
+        // this.adjacencyList[vertex].map(item => {
+        //    return this.removeEdge(vertex, item);
+        // });
+
+        while(this.adjacencyList[vertex].length){
+            let adjacentVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjacentVertex);
+        }
+        delete this.adjacencyList[vertex];
+    }
 } 
 
 let g = new Graph();
@@ -48,3 +60,9 @@ g.addEdge("Tokyo", "Denver");
 // Berlin: []
 // Denver: ["Tokyo"]
 // Tokyo: ["Denver"]
+
+g.addEdge("Denver", "Berlin");
+
+g.removeEdge("Tokyo", "Denver");
+
+g.removeVertex("Tokyo");
